@@ -1,0 +1,66 @@
+$bg-color:rgba(0,0,0,.7);
+$primary-color:#ccc;
+$hover-color:#fff;
+@mixin bg-section($link){
+  background: url($link) center/cover no-repeat;
+}
+@mixin anass($display-value,$justify,$align,$direction-mustafa){
+  display: $display-value;
+  justify-content:$justify;
+  align-items:$align;
+  flex-direction:$direction-mustafa;
+}
+@mixin anchor-tag($bg,$color){
+  background: $bg;
+  color: $color;
+  border:1px solid blue;
+  padding:10px 30px;
+}
+body{
+  margin: 0;
+  
+}
+header{
+  padding: 0 50px;
+  display: flex;
+  background: $bg-color;
+  justify-content:space-between;
+  color: $primary-color;
+  ul{
+    display: flex;
+    list-style:none;
+    padding-top: 10px;
+    li{
+      padding-right: 20px;
+      
+      }
+    }
+  
+}
+a{
+  color: $primary-color;
+  text-decoration:none;
+  &:hover{
+    color:$hover-color;
+  }
+  &:active{
+    color:$hover-color;
+  }
+  &:visited{
+    color:$hover-color;
+  }
+}
+section{
+  height: 100vh;
+  @include anass(flex,center,center,column);
+  @include bg-section("https://source.unsplash.com/random");
+  a{
+    @include anchor-tag(blue,#fff)
+  }
+}
+#section2{
+    @include bg-section("https://source.unsplash.com/random?=2");
+   a{
+    @include anchor-tag(#00B0FF,#B0BEC5)
+  }
+}
